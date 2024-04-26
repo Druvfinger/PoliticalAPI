@@ -9,20 +9,20 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class subjectLogEntry {
+public class BpLogEntry {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
     @JoinColumn(name = "Id")
-    private changeTypeEntry entry;
+    private ChangeTypeEntry entry;
     private String descr;
     @ManyToOne
     @JoinColumn(name = "id")
     private BulletPoint bulletPoint;
 
-    public subjectLogEntry(changeTypeEntry entry, String descr, BulletPoint bulletPoint) {
+    public BpLogEntry(ChangeTypeEntry entry, String descr, BulletPoint bulletPoint) {
         this.entry = entry;
         this.descr = descr;
         this.bulletPoint = bulletPoint;

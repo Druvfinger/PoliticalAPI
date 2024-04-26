@@ -12,14 +12,15 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class changeTypeEntry {
+public class ChangeTypeEntry {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String changeType;
 
-    public changeTypeEntry(String changeType) {
+    public ChangeTypeEntry(String changeType) {
         this.changeType = changeType;
     }
+
 }
