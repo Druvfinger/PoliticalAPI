@@ -4,7 +4,6 @@ import com.example.Collect.Parties.PoliticalPartiesHelper;
 import com.example.Collect.Parties.SverigeDemokraterna.SverigeDemokraterna;
 import com.example.politico.Entities.*;
 import com.example.politico.Services.*;
-import io.github.cdimascio.dotenv.Dotenv;
 
 import java.io.IOException;
 import java.sql.*;
