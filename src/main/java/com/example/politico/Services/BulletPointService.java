@@ -13,7 +13,7 @@ import java.util.List;
 
 @Service
 public class BulletPointService {
-    private static final Logger logger = LoggerFactory.getLogger(BulletPoint.class);
+
     private final BulletPointRepo bpRepo;
 
     public BulletPointService(BulletPointRepo bpRepo) { this.bpRepo = bpRepo; }
@@ -37,8 +37,8 @@ public class BulletPointService {
     public List<BulletPoint> getBulletPointsByLastUpdated(Timestamp timestamp) {
         return bpRepo.findByLastUpdated(timestamp)  ;
     }
-    public void addBulletPoint(String bulletPoint, Subject subject, PoliticalParty party){
-        BulletPoint bp = new BulletPoint(party,bulletPoint,subject,new Timestamp(System.currentTimeMillis()));
+    public void addBP(BulletPoint bp){
         bpRepo.save(bp);
     }
+
 }

@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -20,11 +22,13 @@ public class SubjectLogEntry {
     private String descr;
     @ManyToOne
     @JoinColumn(name = "id")
-    private BulletPoint bulletPoint;
+    private Subject subject;
+    private Timestamp timestamp;
 
-    public SubjectLogEntry(ChangeTypeEntry entry, String descr, BulletPoint bulletPoint) {
+    public SubjectLogEntry(ChangeTypeEntry entry, String descr, Subject subject, Timestamp timestamp) {
         this.entry = entry;
         this.descr = descr;
-        this.bulletPoint = bulletPoint;
+        this.subject = subject;
+        this.timestamp = timestamp;
     }
 }

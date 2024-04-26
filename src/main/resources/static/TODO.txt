@@ -15,3 +15,6 @@ Liberalerna
 KristDemokraterna
 - BPs too long to be commited in DB in some cases
 
+Logging
+- Implement more/better logging maybe not all in DB ??
+Example: private static final Logger logger = LoggerFactory.getLogger(BulletPoint.class);

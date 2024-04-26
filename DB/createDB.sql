@@ -35,7 +35,7 @@ create table bpChangeLog
     changeTypeId int not null,
     descr varchar(50),
     bpId int not null,
-    foreign key (bpId) references bulletPoints(Id),
+    changeTime TIMESTAMP not null,
     foreign key (changeTypeId) references changeType(Id)
 );
 
@@ -45,7 +45,7 @@ create table subjectChangeLog
     changeTypeId int not null,
     descr varchar(50),
     subjectId int not null,
-    foreign key (subjectId) references subjects(Id),
+    changeTime TIMESTAMP not null,
     foreign key (changeTypeId) references changeType(Id)
 );
 
@@ -75,9 +75,9 @@ inner join parties P on BP.partyId = P.Id
 inner join subjects S on BP.subjectId = S.Id;
 
 create view vv_bpChangeLog AS
-select CL.Id , CL.descr , CL.bpId , CL.changeTypeId , CT.changeType from bpChangeLog CL
+select CL.Id , CL.descr , CL.bpId , CL.changeTypeId, CL.changeTime, CT.changeType from bpChangeLog CL
 inner join changeType CT on CL.changeTypeId = CT.Id
 
 create view vv_subjectChangeLog AS
-select CL.Id , CL.descr , CL.subjectId , CL.changeTypeId, CT.changeType from subjectChangeLog CL
+select CL.Id , CL.descr , CL.subjectId , CL.changeTypeId, CL.changeTime, CT.changeType from subjectChangeLog CL
 inner join changeType cT on CT.Id = CL.changeTypeId

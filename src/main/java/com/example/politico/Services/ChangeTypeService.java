@@ -16,4 +16,8 @@ public class ChangeTypeService {
     public void addEntry(ChangeTypeEntry entry) {
         repo.save(entry);
     }
+
+    public ChangeTypeEntry getEntryById(long id){
+        return repo.findById(id).orElse(null);
+    }
 }

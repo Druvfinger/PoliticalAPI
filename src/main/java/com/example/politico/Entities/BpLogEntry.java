@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -21,10 +23,12 @@ public class BpLogEntry {
     @ManyToOne
     @JoinColumn(name = "id")
     private BulletPoint bulletPoint;
+    private Timestamp timestamp;
 
-    public BpLogEntry(ChangeTypeEntry entry, String descr, BulletPoint bulletPoint) {
+    public BpLogEntry(ChangeTypeEntry entry, String descr, BulletPoint bulletPoint,Timestamp timestamp) {
         this.entry = entry;
         this.descr = descr;
         this.bulletPoint = bulletPoint;
+        this.timestamp = timestamp;
     }
 }
