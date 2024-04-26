@@ -29,6 +29,32 @@ create table bulletPoints
     foreign key (subjectId) references subjects(Id)
 );
 
+create table bpChangeLog
+(
+    Id int not null auto_increment primary key,
+    changeTypeId int not null,
+    descr varchar(50),
+    bpId int not null,
+    foreign key (bpId) references bulletPoints(Id),
+    foreign key (changeTypeId) references changeType(Id)
+);
+
+create table subjectChangeLog
+(
+    Id int not null auto_increment primary key,
+    changeTypeId int not null,
+    descr varchar(50),
+    subjectId int not null,
+    foreign key (subjectId) references subjects(Id),
+    foreign key (changeTypeId) references changeType(Id)
+);
+
+create table changeType
+(
+    Id int not null auto_increment primary key,
+    changeType varchar(10) not null
+);
+
 insert into parties(name, abbreviation)
 values ('SVERIGEDEMOKRATERNA', 'SD'),
        ('SOCIALDEMOKRATERNA','S'),
@@ -39,7 +65,19 @@ values ('SVERIGEDEMOKRATERNA', 'SD'),
        ('KRISTDEMOKRATERNA','KD'),
        ('MODERATERNA','M');
 
+insert into changeType(changeType)
+values ('INSERTED'), ('UPDATED'), ('DELETED')
+
+
 create view vv_BP AS
 select BP.Id BPID, BP.bulletPoint BP, BP.lastUpdated LastUpdated,P.name Party, P.Id PID, S.name Subject, S.id SID, S.source Source from bulletpoints BP
 inner join parties P on BP.partyId = P.Id
 inner join subjects S on BP.subjectId = S.Id;
+
+create view vv_bpChangeLog AS
+select CL.Id , CL.descr , CL.bpId , CL.changeTypeId , CT.changeType from bpChangeLog CL
+inner join changeType CT on CL.changeTypeId = CT.Id
+
+create view vv_subjectChangeLog AS
+select CL.Id , CL.descr , CL.subjectId , CL.changeTypeId, CT.changeType from subjectChangeLog CL
+inner join changeType cT on CT.Id = CL.changeTypeId

@@ -4,14 +4,16 @@ import com.example.politico.Entities.BulletPoint;
 import com.example.politico.Entities.PoliticalParty;
 import com.example.politico.Entities.Subject;
 import com.example.politico.Repos.BulletPointRepo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
 import java.sql.Timestamp;
 import java.util.List;
 
+
 @Service
 public class BulletPointService {
-
+    private static final Logger logger = LoggerFactory.getLogger(BulletPoint.class);
     private final BulletPointRepo bpRepo;
 
     public BulletPointService(BulletPointRepo bpRepo) { this.bpRepo = bpRepo; }
@@ -34,5 +36,9 @@ public class BulletPointService {
 
     public List<BulletPoint> getBulletPointsByLastUpdated(Timestamp timestamp) {
         return bpRepo.findByLastUpdated(timestamp)  ;
+    }
+    public void addBulletPoint(String bulletPoint, Subject subject, PoliticalParty party){
+        BulletPoint bp = new BulletPoint(party,bulletPoint,subject,new Timestamp(System.currentTimeMillis()));
+        bpRepo.save(bp);
     }
 }

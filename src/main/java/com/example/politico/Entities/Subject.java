@@ -21,4 +21,11 @@ public class Subject {
     @JoinColumn(name = "id")
     private PoliticalParty politicalParty;
     private Timestamp lastUpdated;
+
+    public Subject(String name, String source, PoliticalParty politicalParty, Timestamp lastUpdated) {
+        this.name = name;
+        this.source = source;
+        this.politicalParty = politicalParty;
+        this.lastUpdated = lastUpdated;
+    }
 }

@@ -23,7 +23,7 @@ public class SverigeDemokraterna {
         bulletPoints = bulletPoints.subList(1, bulletPoints.size());
         return helper.cleanBulletPoints(bulletPoints);
     }
-    public List<String> getAllSubjects() throws IOException{
+    public List<String> fetchAllSubjects() throws IOException{
         Scanner scanner = new Scanner(new File(path));
         List<String> subjects = new ArrayList<>();
         while (scanner.hasNext()){

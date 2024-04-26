@@ -58,7 +58,7 @@ public class PoliticalPartiesHelper {
         Map<String, List<String>> bulletPointsMap = new HashMap<>();
         if (partyAbbreviation.equals("SD")) {
             SverigeDemokraterna SD = new SverigeDemokraterna();
-            List<String> subjects = SD.getAllSubjects();
+            List<String> subjects = SD.fetchAllSubjects();
             for (String subject : subjects) bulletPointsMap.put(subject, SD.getBulletPoints(subject));
         } else if (null != subjectLinkMap) {
             CenterPartiet C = new CenterPartiet();

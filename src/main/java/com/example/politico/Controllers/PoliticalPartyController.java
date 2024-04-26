@@ -27,5 +27,9 @@ public class PoliticalPartyController {
         return partyService.getPartyById(id);
     }
 
+    @GetMapping("/abbreviation")
+    public PoliticalParty getPartyByAbbreviation(@RequestParam String abbreviation){
+        return partyService.getPartyByAbbreviation(abbreviation);
+    }
 
 }

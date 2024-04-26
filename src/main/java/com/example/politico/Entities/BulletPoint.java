@@ -31,4 +31,5 @@ public class BulletPoint {
         this.subject = subject;
         this.lastUpdated = lastUpdated;
     }
+
 }

@@ -31,4 +31,11 @@ public class SubjectService {
     public List<Subject> getSubjectsByLastUpdated(Timestamp timestamp){
         return subjectRepo.findByLastUpdated(timestamp);
     }
+    public Subject getSubjectByNameAndAndPoliticalParty(String name, PoliticalParty party){
+        return subjectRepo.getSubjectByNameAndAndPoliticalParty(name,party);
+    }
+
+    public void addSubject(Subject subject) {
+        subjectRepo.save(subject);
+    }
 }

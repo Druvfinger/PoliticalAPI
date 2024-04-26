@@ -4,6 +4,7 @@ import com.example.politico.Entities.PoliticalParty;
 import com.example.politico.Repos.PoliticalPartyRepo;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -16,4 +17,12 @@ public class PoliticalPartyService {
 
     public PoliticalParty getPartyById(long Id) { return partyRepo.findById(Id).orElse(null); }
 
+    public PoliticalParty getPartyByAbbreviation(String abbreviation){
+        return partyRepo.findByAbbreviation(abbreviation);
+    }
+    public List<String> getAllAbbreviations(List<PoliticalParty> parties) {
+        List<String> abbreviations = new ArrayList<>();
+        parties.forEach(p -> abbreviations.add(p.getAbbreviation()));
+        return abbreviations;
+    }
 }
