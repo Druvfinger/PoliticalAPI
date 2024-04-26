@@ -10,6 +10,7 @@ import java.sql.Timestamp;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "subjects")
 public class Subject {
 
     @Id
@@ -18,7 +19,7 @@ public class Subject {
     private String name;
     private String source;
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "partyId")
     private PoliticalParty politicalParty;
     private Timestamp lastUpdated;
 

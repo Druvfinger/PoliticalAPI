@@ -11,17 +11,18 @@ import java.sql.Timestamp;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "bpchangelog")
 public class BpLogEntry {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    @JoinColumn(name = "Id")
+    @JoinColumn(name = "changeTypeId")
     private ChangeTypeEntry entry;
     private String descr;
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "bpId")
     private BulletPoint bulletPoint;
     private Timestamp timestamp;
 

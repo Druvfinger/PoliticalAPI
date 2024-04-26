@@ -8,7 +8,11 @@ group = "com.example"
 version = "0.0.1-SNAPSHOT"
 
 java {
+    toolchain{
+        languageVersion = JavaLanguageVersion.of(22)
+    }
     sourceCompatibility = JavaVersion.VERSION_22
+    targetCompatibility = JavaVersion.VERSION_22
 }
 
 configurations {

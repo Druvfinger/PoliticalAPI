@@ -11,17 +11,18 @@ import java.sql.Timestamp;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "bulletpoints")
 public class BulletPoint {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "partyId")
     private PoliticalParty politicalParty;
     private String bulletPoint;
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "subjectId")
     private Subject subject;
     private Timestamp lastUpdated;
 
