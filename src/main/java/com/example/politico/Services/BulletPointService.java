@@ -35,7 +35,7 @@ public class BulletPointService {
     }
 
     public List<BulletPoint> getBulletPointsByLastUpdated(Timestamp timestamp) {
-        return bpRepo.findByLastUpdated(timestamp)  ;
+        return bpRepo.findByUpdated(timestamp)  ;
     }
     public void addBP(BulletPoint bp){
         bpRepo.save(bp);

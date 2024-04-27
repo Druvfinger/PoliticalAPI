@@ -15,10 +15,11 @@ public class ChangeTypeEntry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String changeType;
+    @Column(name = "type")
+    private String type;
 
-    public ChangeTypeEntry(String changeType) {
-        this.changeType = changeType;
+    public ChangeTypeEntry(String type) {
+        this.type = type;
     }
 
 }

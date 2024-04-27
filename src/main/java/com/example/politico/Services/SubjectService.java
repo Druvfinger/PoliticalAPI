@@ -21,7 +21,7 @@ public class SubjectService {
     }
 
     public List<Subject> getSubjectsByParty(PoliticalParty party){
-        return subjectRepo.findByPoliticalParty(party);
+        return subjectRepo.findByParty(party);
     }
 
     public Subject getSubjectById(long id){
@@ -29,10 +29,10 @@ public class SubjectService {
     }
 
     public List<Subject> getSubjectsByLastUpdated(Timestamp timestamp){
-        return subjectRepo.findByLastUpdated(timestamp);
+        return subjectRepo.findByUpdated(timestamp);
     }
     public Subject getSubjectByNameAndAndPoliticalParty(String name, PoliticalParty party){
-        return subjectRepo.getSubjectByNameAndAndPoliticalParty(name,party);
+        return subjectRepo.findByNameAndParty(name,party);
     }
 
     public void addSubject(Subject subject) {

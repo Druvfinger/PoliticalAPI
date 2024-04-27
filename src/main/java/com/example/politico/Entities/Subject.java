@@ -19,14 +19,15 @@ public class Subject {
     private String name;
     private String source;
     @ManyToOne
-    @JoinColumn(name = "partyId")
-    private PoliticalParty politicalParty;
-    private Timestamp lastUpdated;
+    @JoinColumn(name = "pid")
+    private PoliticalParty party;
+    @Column(name = "updated", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+    private Timestamp updated;
 
-    public Subject(String name, String source, PoliticalParty politicalParty, Timestamp lastUpdated) {
+    public Subject(String name, String source, PoliticalParty party, Timestamp updated) {
         this.name = name;
         this.source = source;
-        this.politicalParty = politicalParty;
-        this.lastUpdated = lastUpdated;
+        this.party = party;
+        this.updated = updated;
     }
 }

@@ -37,7 +37,7 @@ public class Collect {
                 Subject subject = subjectService.getSubjectByNameAndAndPoliticalParty(entry.getKey(), party);
                 for (String bp : entry.getValue()){
                     BulletPoint bulletPoint = new BulletPoint(party,bp,subject,new Timestamp(System.currentTimeMillis()));
-                    BpLogEntry logEntry = new BpLogEntry(changeTypeService.getEntryById(1),"New BP Added", bulletPoint, bulletPoint.getLastUpdated());
+                    BpLogEntry logEntry = new BpLogEntry(changeTypeService.getEntryById(1),"New BP Added", bulletPoint, bulletPoint.getUpdated());
                     bpService.addBP(bulletPoint);
                     bpLogService.addLogEntry(logEntry);
                 }
@@ -63,7 +63,7 @@ public class Collect {
                     default -> entry.getValue();
                 };
                 Subject subject = new Subject(entry.getKey(), source, party, new Timestamp(System.currentTimeMillis()));
-                SubjectLogEntry logEntry = new SubjectLogEntry(changeTypeService.getEntryById(1),"New Subject Added", subject, subject.getLastUpdated());
+                SubjectLogEntry logEntry = new SubjectLogEntry(changeTypeService.getEntryById(1),"New Subject Added", subject, subject.getUpdated());
                 subjectService.addSubject(subject);
                 subjectLogService.addEntry(logEntry);
             }

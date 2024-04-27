@@ -18,19 +18,20 @@ public class BulletPoint {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    @JoinColumn(name = "partyId")
+    @JoinColumn(name = "pid")
     private PoliticalParty politicalParty;
-    private String bulletPoint;
+    private String bp;
     @ManyToOne
-    @JoinColumn(name = "subjectId")
+    @JoinColumn(name = "sid")
     private Subject subject;
-    private Timestamp lastUpdated;
+    @Column(name = "updated", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+    private Timestamp updated;
 
-    public BulletPoint(PoliticalParty politicalParty, String bulletPoint, Subject subject, Timestamp lastUpdated) {
+    public BulletPoint(PoliticalParty politicalParty, String bp, Subject subject, Timestamp updated) {
         this.politicalParty = politicalParty;
-        this.bulletPoint = bulletPoint;
+        this.bp = bp;
         this.subject = subject;
-        this.lastUpdated = lastUpdated;
+        this.updated = updated;
     }
 
 }

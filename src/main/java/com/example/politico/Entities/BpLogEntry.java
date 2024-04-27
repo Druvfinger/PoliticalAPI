@@ -18,18 +18,18 @@ public class BpLogEntry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    @JoinColumn(name = "changeTypeId")
+    @JoinColumn(name = "type")
     private ChangeTypeEntry entry;
     private String descr;
     @ManyToOne
-    @JoinColumn(name = "bpId")
+    @JoinColumn(name = "bpid")
     private BulletPoint bulletPoint;
-    private Timestamp timestamp;
+    private Timestamp updated;
 
-    public BpLogEntry(ChangeTypeEntry entry, String descr, BulletPoint bulletPoint,Timestamp timestamp) {
+    public BpLogEntry(ChangeTypeEntry entry, String descr, BulletPoint bulletPoint,Timestamp updated) {
         this.entry = entry;
         this.descr = descr;
         this.bulletPoint = bulletPoint;
-        this.timestamp = timestamp;
+        this.updated = updated;
     }
 }

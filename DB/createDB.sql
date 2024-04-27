@@ -13,46 +13,46 @@ create table subjects
     Id int not null auto_increment primary key,
     name varchar(200) not null,
     source varchar(200) not null,
-    partyId int not null,
-    lastUpdated varchar(250) not null,
-    foreign key (partyId) references parties(Id)
+    pid int not null,
+    updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    foreign key (pid) references parties(Id)
 );
 
 create table bulletPoints
 (
     Id int not null auto_increment primary key,
-    partyId int,
-    bulletPoint varchar(8000),
-    subjectId int,
-    lastUpdated varchar(250) not null,
-    foreign key (partyId) references parties(Id),
-    foreign key (subjectId) references subjects(Id)
+    pid int not null,
+    bp varchar(8000) not null,
+    sid int not null,
+    updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    foreign key (pid) references parties(Id),
+    foreign key (sid) references subjects(Id)
 );
 
 create table bpChangeLog
 (
     Id int not null auto_increment primary key,
-    changeTypeId int not null,
+    type int not null,
     descr varchar(50),
-    bpId int not null,
-    changeTime TIMESTAMP not null,
-    foreign key (changeTypeId) references changeType(Id)
+    bpid int not null,
+    updated TIMESTAMP not null,
+    foreign key (type) references changeType(Id)
 );
 
 create table subjectChangeLog
 (
     Id int not null auto_increment primary key,
-    changeTypeId int not null,
+    type int not null,
     descr varchar(50),
-    subjectId int not null,
-    changeTime TIMESTAMP not null,
-    foreign key (changeTypeId) references changeType(Id)
+    sid int not null,
+    updated TIMESTAMP not null,
+    foreign key (type) references changeType(Id)
 );
 
 create table changeType
 (
     Id int not null auto_increment primary key,
-    changeType varchar(10) not null
+    type varchar(10) not null
 );
 
 insert into parties(name, abbreviation)

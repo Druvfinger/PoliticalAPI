@@ -18,18 +18,18 @@ public class SubjectLogEntry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    @JoinColumn(name = "changeTypeId")
+    @JoinColumn(name = "type")
     private ChangeTypeEntry entry;
     private String descr;
     @ManyToOne
-    @JoinColumn(name = "subjectId")
+    @JoinColumn(name = "sid")
     private Subject subject;
-    private Timestamp timestamp;
+    private Timestamp updated;
 
-    public SubjectLogEntry(ChangeTypeEntry entry, String descr, Subject subject, Timestamp timestamp) {
+    public SubjectLogEntry(ChangeTypeEntry entry, String descr, Subject subject, Timestamp updated) {
         this.entry = entry;
         this.descr = descr;
         this.subject = subject;
-        this.timestamp = timestamp;
+        this.updated = updated;
     }
 }

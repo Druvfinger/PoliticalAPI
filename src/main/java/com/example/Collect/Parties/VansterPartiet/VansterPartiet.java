@@ -20,15 +20,13 @@ public class VansterPartiet {
         final String url = "https://www.vansterpartiet.se" + endOfUrl;
         Document doc = Jsoup.parse(new URL(url).openStream(), StandardCharsets.UTF_8.name(), url);
         List<String> bulletPoints = new ArrayList<>();
-        boolean documentHasULElement = doc.getElementsByTag("ul").size() > 0;
-        if (documentHasULElement){
+        if (!doc.getElementsByTag("ul").isEmpty()){
             List<Element> elementList = new ArrayList<>();
             Elements elements = doc.getElementsByClass("TextContent-module--component--I1Ox9");
             for (Element element : elements){ elementList.addAll(element.getElementsByTag("li")); }
             elementList.forEach(element -> bulletPoints.add(element.text()));
         }
         bulletPoints.addAll(getBulletPointsInTextTag(doc.getElementsByTag("p")));
-        if (bulletPoints.isEmpty()) { System.out.println("No BulletPoints Found"); }
         return helper.cleanBulletPoints(bulletPoints);
     }
     public Map<String, String> getSubjectLinkMap() throws IOException{
