@@ -4,9 +4,8 @@ import com.example.politico.Entities.BulletPoint;
 import com.example.politico.Entities.PoliticalParty;
 import com.example.politico.Entities.Subject;
 import com.example.politico.Repos.BulletPointRepo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
 import java.sql.Timestamp;
 import java.util.List;
 

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("political-parties")
+@RequestMapping("/political-parties")
 public class PoliticalPartyController {
 
     private final PoliticalPartyService partyService;

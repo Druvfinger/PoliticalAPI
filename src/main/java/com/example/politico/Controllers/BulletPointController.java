@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 @RestController
-@RequestMapping("bulletpoints")
+@RequestMapping("/bulletpoints")
 public class BulletPointController {
 
     private final BulletPointService bpService;

@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 @RestController
-@RequestMapping("subjects")
+@RequestMapping("/subjects")
 public class SubjectController {
 
     private final SubjectService subjectService;

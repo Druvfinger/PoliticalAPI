@@ -4,8 +4,6 @@ import com.example.Collect.Parties.PoliticalPartiesHelper;
 import com.example.Collect.Parties.SverigeDemokraterna.SverigeDemokraterna;
 import com.example.politico.Entities.*;
 import com.example.politico.Services.*;
-import org.springframework.context.ConfigurableApplicationContext;
-
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;

@@ -5,7 +5,6 @@ import com.example.politico.Entities.PoliticalParty;
 import com.example.politico.Entities.Subject;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.List;
 

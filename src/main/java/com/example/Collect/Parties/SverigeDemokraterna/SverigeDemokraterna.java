@@ -1,6 +1,7 @@
 package com.example.Collect.Parties.SverigeDemokraterna;
 
 import com.example.Collect.Parties.PoliticalPartiesHelper;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
