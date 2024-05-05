@@ -9,6 +9,5 @@ import java.util.List;
 
 public interface SubjectRepo extends JpaRepository<Subject, Long> {
     List<Subject> findByParty(PoliticalParty party);
-    List<Subject> findByUpdated(Timestamp timestamp);
     Subject findByNameAndParty(String name, PoliticalParty party);
 }

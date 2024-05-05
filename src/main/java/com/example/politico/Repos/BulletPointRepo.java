@@ -11,5 +11,4 @@ import java.util.List;
 public interface BulletPointRepo extends JpaRepository<BulletPoint, Long> {
     List<BulletPoint> findBySubject(Subject subject);
     List<BulletPoint> findByPoliticalParty(PoliticalParty party);
-    List<BulletPoint> findByUpdated(Timestamp timestamp);
 }
