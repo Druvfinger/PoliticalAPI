@@ -1,0 +1,28 @@
+Moderaterna
+- Kolla på dem ämnena där inga BPs hittats
+
+SverigeDemokraterna
+- Kolla om vi kan köra detta via PDFBox istället för att ha det lokalt
+
+VänsterPartiet
+- Kolla på dem ämnena där inga BPs hittats
+- BPs too long to be commited in DB in some cases
+
+Liberalerna
+- Kolla på om man kan få bättre BPs istället för en vägg av text
+- BPs too long to be commited in DB in some cases
+
+KristDemokraterna
+- BPs too long to be commited in DB in some cases
+
+Logging
+- Should I implement Logging or is changeLog in DB good enough ?
+
+DB
+- Lägg till så att partierna är kopplade till "block"
+
+API
+- Skapa SecurityConfig
+
+Other
+- Split Collect in to a separate backend app
