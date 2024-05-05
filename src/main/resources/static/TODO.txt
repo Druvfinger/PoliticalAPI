@@ -22,7 +22,9 @@ DB
 - Lägg till så att partierna är kopplade till "block"
 
 API
-- Skapa SecurityConfig
+- API Documentation
+- Consider If we should return full Objects or just the BP/subject so forth
 
 Other
 - Split Collect in to a separate backend app
+- @UpdateTimestamp should be used on the entities ??

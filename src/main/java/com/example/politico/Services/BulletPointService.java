@@ -33,9 +33,6 @@ public class BulletPointService {
         return bpRepo.findByPoliticalParty(party);
     }
 
-    public List<BulletPoint> getBulletPointsByLastUpdated(Timestamp timestamp) {
-        return bpRepo.findByUpdated(timestamp)  ;
-    }
     public void addBP(BulletPoint bp){
         bpRepo.save(bp);
     }
