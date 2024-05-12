@@ -26,6 +26,7 @@ API
 - Consider If we should return full Objects or just the BP/subject so forth
 |- Needs endPoint that takes two parties and two subjects so that you can compare the two
 |- or is this supposed to happen on the website instead ?
+- Implement actual Whitelist
 
 Other
 - Split Collect in to a separate backend app

@@ -78,6 +78,7 @@ public class BulletPointController {
     }
 
     @GetMapping("/subject")
+    @CrossOrigin(origins = "http://127.0.0.1:5500/")
     @Operation(
             tags = {"BulletPoint"},
             operationId = "getBpsBySubject",

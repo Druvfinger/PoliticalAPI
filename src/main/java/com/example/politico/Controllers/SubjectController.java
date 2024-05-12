@@ -56,6 +56,7 @@ public class SubjectController {
     }
 
     @GetMapping("/party")
+    @CrossOrigin(origins = "http://127.0.0.1:5500/")
     @Operation(
             tags = {"Subject"},
             operationId = "getSubjectsByParty",
