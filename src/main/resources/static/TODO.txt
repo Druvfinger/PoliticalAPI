@@ -29,6 +29,9 @@ COLLECT
 - Secure so that if we get the same subject again it does not get commited into DB
 - Secure so that if same subject has slight changes it updates and does not add new BP.
 
+TESTING
+- JUST DO IT!
+
 Other
 - Split Collect in to a separate backend app
 - @UpdateTimestamp should be used on the entities ??
