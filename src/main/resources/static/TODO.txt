@@ -24,6 +24,11 @@ API
 - Consider If we should return full Objects or just the BP/subject so forth
 - Implement actual Whitelist
 
+COLLECT
+- Separate Data Collection from API.
+- Secure so that if we get the same subject again it does not get commited into DB
+- Secure so that if same subject has slight changes it updates and does not add new BP.
+
 Other
 - Split Collect in to a separate backend app
 - @UpdateTimestamp should be used on the entities ??
